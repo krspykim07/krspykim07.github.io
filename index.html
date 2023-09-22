@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			
+			body {
+				background-color: rgba(9, 14, 46, 0.838);
+				color: white;
+				font-family: monospace;
+				margin: 0;
+				display: flex;
+				flex-direction: column;
+				min-height: 100vh;
+			}
+
+			.link {
+				color: rgba(193, 72, 227, 0.838);
+			}
+
+			.wrapper {
+				display: flex;  
+				flex-flow: row wrap;
+			}
+
+			/* We tell all items to be 100% width, via flex-basis */
+			.wrapper > * {
+			  padding: 10px;
+			  flex: 1 100%;
+			}
+
+			.header {
+				font-size: 40pt;
+				font-weight: bold;
+				margin-top: 70px;
+				margin-left: 70px;
+			}
+
+			.main {
+				margin-top: 20px;
+				margin-right: 70px;
+			}
+
+			.side {
+				text-align: center;
+
+			}
+
+			.footer {
+				background-color: black;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				min-height: 60px;
+				text-align: right;
+			}
+
+			@media all and (min-width: 600px) {
+			/* We tell both sidebars to share a row */
+			  .side { flex: 0.25 auto; }
+			}
+
+			@media all and (min-width: 800px) {
+			/* We invert order of first sidebar and main
+			 * And tell the main element to take twice as much width as the other two sidebars 
+			 */
+			  .main { flex: 3 0px; }
+			  .side	  { order: 1; }
+			  .main    { order: 2; }
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class = "wrapper">	
+			<header class = "header"> Hello, I'm Kim! </header>
+			<aside class = "side">
+				<img src="https://33.media.tumblr.com/f02aed641beb7a5059d57484c7f80f8c/tumblr_nlmmguXypN1tv87ujo1_400.gif" width="300" height="300" alt="Kawaii pixel cat gif">
+				<p><h3><strong>Computer Engineering Student</strong></h3></p>
+				<p class = "link"><a href = "https://www.linkedin.com/in/vktalgador/">LinkedIn</a></p>
+			</aside>
+			<article class = "main">
+				<h1>About Me!</h1>
+				<p>In high school, I embarked on my programming journey using BlueJ as my starting point. 
+					Soon after, I delved into the world of HTML, utilizing it to craft and personalize my Tumblr page. 
+					My penchant for hands-on activities led me to engaging in physics laboratories, 
+					where I tackled projects like constructing miniature bridges, rollercoasters, and even designing a hamster maze within a themed park.
+					These experiences solidified my passion for Computer Engineering, motivating me to pursue it as my major.
+				</p>
+			 	<p>During my college journey, I expanded my knowledge and skills. 
+					I delved into x86 Assembly, Java, and C programming. 
+					Additionally, I honed my circuit design expertise with a focus on VHDL, Verilog, and other logical designs. 
+					I explored a variety of microcontrollers, including the STM32 board, Texas Instrument board, and Arduino.
+					In my current semester, my studies are centered around CMOS and digital VLSI design, Web Programming, Robotics, and Senior Product Design.
+			 	</p>
+			 	<p>When I step away from my academic pursuits, you'll often find me engaged in workouts or enjoying spirited volleyball matches with my friends. 
+					During breaks, I immerse myself in the world of Asian dramas, particularly Korean and Japanese productions, indulge in Anime, or groove to K-pop tunes.
+			 	</p>
+			</article>
+		</div>
+		<footer class = "footer"> <a href = "https://www.linkedin.com/in/vktalgador/" ><img src="https://static-00.iconduck.com/assets.00/linkedin-icon-1024x1024-net2o24e.png" width="30" height="30" alt="My Linkedin Profile"></a></footer>
+	</body>
+</html>

@@ -2,9 +2,14 @@
 <html>
 	<head>
 		<style>
+
+			html{
+			     scroll-behavior: smooth;
+				overflow: scroll;
+			}
 			
 			body {
-				background-color: rgba(9, 14, 46, 0.838);
+				background-color: rgba(9, 14, 47, 0.944);
 				color: white;
 				font-family: monospace;
 				margin: 0;
@@ -13,13 +18,11 @@
 				min-height: 100vh;
 			}
 
-			.link {
-				color: rgba(193, 72, 227, 0.838);
-			}
-
 			.wrapper {
 				display: flex;  
 				flex-flow: row wrap;
+				align-items: flex-start;
+
 			}
 
 			/* We tell all items to be 100% width, via flex-basis */
@@ -36,13 +39,62 @@
 			}
 
 			.main {
-				margin-top: 20px;
 				margin-right: 70px;
 			}
 
-			.side {
+			.aside {
+				display: flex;
+				flex-flow: column wrap;
 				text-align: center;
+				margin-top: 20px;
+				margin-left: 70px;
 
+			}
+
+			.profile {
+			}
+
+			.navigation {
+				list-style: none;
+				margin: 0;
+				color: white;
+				padding-left: 0;
+			}
+
+			.navigation a {
+			  text-decoration: none;
+			  display: block;
+			  padding: 1em;
+			  color: white;
+			}
+
+			.navigation a:hover {
+			  background: #1565C0;
+
+			  transition: all 200ms linear;
+			}
+
+			div.page {
+				min-height:100px;
+				padding-top: 100px;
+			}
+
+			.experiencelist {
+				margin: 0;
+				padding-left: 0;
+			}
+
+			.experiencelist li {
+				list-style: none;
+				padding: 1em;
+				display: block;
+				border-radius: 10px;
+			}
+
+			.experiencelist li:hover {
+				background-color: rgba(46, 53, 110, 0.838);
+			  	transition: all 200ms linear;
+				
 			}
 
 			.footer {
@@ -51,21 +103,33 @@
 				left: 0;
 				width: 100%;
 				min-height: 60px;
+				margin-top: auto;
 				text-align: right;
 			}
 
 			@media all and (min-width: 600px) {
 			/* We tell both sidebars to share a row */
-			  .side { flex: 0.25 auto; }
+			
+			.header {
+				position: sticky;
+				top: 70px;
+			}
+			
+			.aside { 
+				position: sticky;
+				top: 70px;
+				flex: 1 auto;
+			  }
 			}
 
 			@media all and (min-width: 800px) {
 			/* We invert order of first sidebar and main
 			 * And tell the main element to take twice as much width as the other two sidebars 
 			 */
-			  .main { flex: 3 0px; }
-			  .side	  { order: 1; }
-			  .main    { order: 2; }
+			  .main	{flex: 3 0px;}
+			  .header {order: 1;}
+			  .aside	{order: 2;}
+			  .main	{order: 3;}
 			}
 
 		</style>
@@ -73,12 +137,23 @@
 	<body>
 		<div class = "wrapper">	
 			<header class = "header"> Hello, I'm Kim! </header>
-			<aside class = "side">
-				<img src="https://33.media.tumblr.com/f02aed641beb7a5059d57484c7f80f8c/tumblr_nlmmguXypN1tv87ujo1_400.gif" width="300" height="300" alt="Kawaii pixel cat gif">
-				<p><h3><strong>Computer Engineering Student</strong></h3></p>
-				<p class = "link"><a href = "https://www.linkedin.com/in/vktalgador/">LinkedIn</a></p>
-			</aside>
+			<div class = "aside">
+				<aside class = "profile">
+					<img src="https://33.media.tumblr.com/f02aed641beb7a5059d57484c7f80f8c/tumblr_nlmmguXypN1tv87ujo1_400.gif" width="300" height="300" alt="Kawaii pixel cat gif">
+					<p><h3><strong>Computer Engineering Student</strong></h3></p>
+				</aside>
+				<ul class = "navigation">
+					<li><a href = #about>About</a></li>
+					<li><a href = #experience>Experience</a></li>
+					<li><a href = "https://www.linkedin.com/in/vktalgador/" 
+						target="_blank"> LinkedIn </a></li>
+					<li><a href= "https://www.instagram.com/krspykim07/"
+						target="_blank"> Instagram </a></li>
+					</ul>
+				</aside>
+			</div>	
 			<article class = "main">
+				<div class = "page" id = "about">
 				<h1>About Me!</h1>
 				<p>In high school, I embarked on my programming journey using BlueJ as my starting point. 
 					Soon after, I delved into the world of HTML, utilizing it to craft and personalize my Tumblr page. 
@@ -95,8 +170,37 @@
 			 	<p>When I step away from my academic pursuits, you'll often find me engaged in workouts or enjoying spirited volleyball matches with my friends. 
 					During breaks, I immerse myself in the world of Asian dramas, particularly Korean and Japanese productions, indulge in Anime, or groove to K-pop tunes.
 			 	</p>
+				</div>
+				<div class = "page" id = "experience">
+				<h1>Experiences</h1>
+				<ul class = "experiencelist">
+					<li>
+						<h3>IT STRATEGY SERVICES, STUDENT ASSISTANT</h3>
+						<h3>California Department of HealthCare and Services</h3>
+						<p class = "content">
+							
+						</p>
+					
+					</li>
+					<li><h3>STUDENT SUCCESS INITIATIVES, STUDENT ASSISTANT</h3>
+						<h3>California State University, Sacramento</h3>
+						<p class = "content">
+							
+						</p>
+					</li>
+
+					<li><h3>TECHNOLOGY SUPPORT INTERN</h3>
+						<h3>Laton Unified School District</h3>
+						<p class = "content">
+							
+						</p>
+					</li>
+				</ul>
+				</div>
+				
 			</article>
 		</div>
-		<footer class = "footer"> <a href = "https://www.linkedin.com/in/vktalgador/" ><img src="https://static-00.iconduck.com/assets.00/linkedin-icon-1024x1024-net2o24e.png" width="30" height="30" alt="My Linkedin Profile"></a></footer>
+		<footer class = "footer">
+		</footer>
 	</body>
 </html>

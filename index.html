@@ -11,7 +11,7 @@
 			body {
 				background-color: rgba(9, 14, 47, 0.944);
 				color: white;
-				font-family: monospace;
+				font-family: sans-serif;
 				margin: 0;
 				display: flex;
 				flex-direction: column;
@@ -34,8 +34,11 @@
 			.header {
 				font-size: 40pt;
 				font-weight: bold;
-				margin-top: 70px;
-				margin-left: 70px;
+				margin-top: 70pt;
+				margin-left: 70pt;
+				top: 20pt;
+				width: 100%;
+				position:sticky;
 			}
 
 			.main {
@@ -45,9 +48,8 @@
 			.aside {
 				display: flex;
 				flex-flow: column wrap;
-				text-align: center;
 				margin-top: 20px;
-				margin-left: 70px;
+				margin-left: 90px;
 
 			}
 
@@ -69,9 +71,23 @@
 			}
 
 			.navigation a:hover {
-			  background: #1565C0;
+				background-color: rgba(46, 53, 110, 0.838);
+			 	margin-inline-start: 20px;
+			  	transition: all 200ms linear;
+			}
 
-			  transition: all 200ms linear;
+			.externallinks {
+				display: flex;
+				flex-direction: row;
+				list-style: none;
+				margin: 0;
+				padding-top: 10px;
+				padding-left: 0;
+			}
+
+			.externallinks a {
+				display: block;
+				padding: 10px;
 			}
 
 			div.page {
@@ -94,7 +110,11 @@
 			.experiencelist li:hover {
 				background-color: rgba(46, 53, 110, 0.838);
 			  	transition: all 200ms linear;
-				
+			}
+
+			.content {
+				text-align: justify;
+				color: rgba(207, 205, 249, 0.809);
 			}
 
 			.footer {
@@ -104,16 +124,10 @@
 				width: 100%;
 				min-height: 60px;
 				margin-top: auto;
-				text-align: right;
 			}
 
 			@media all and (min-width: 600px) {
 			/* We tell both sidebars to share a row */
-			
-			.header {
-				position: sticky;
-				top: 70px;
-			}
 			
 			.aside { 
 				position: sticky;
@@ -127,7 +141,6 @@
 			 * And tell the main element to take twice as much width as the other two sidebars 
 			 */
 			  .main	{flex: 3 0px;}
-			  .header {order: 1;}
 			  .aside	{order: 2;}
 			  .main	{order: 3;}
 			}
@@ -135,8 +148,8 @@
 		</style>
 	</head>
 	<body>
+		<header class = "header"> Hello, I'm Kim! </header>
 		<div class = "wrapper">	
-			<header class = "header"> Hello, I'm Kim! </header>
 			<div class = "aside">
 				<aside class = "profile">
 					<img src="https://33.media.tumblr.com/f02aed641beb7a5059d57484c7f80f8c/tumblr_nlmmguXypN1tv87ujo1_400.gif" width="300" height="300" alt="Kawaii pixel cat gif">
@@ -145,11 +158,13 @@
 				<ul class = "navigation">
 					<li><a href = #about>About</a></li>
 					<li><a href = #experience>Experience</a></li>
-					<li><a href = "https://www.linkedin.com/in/vktalgador/" 
-						target="_blank"> LinkedIn </a></li>
+				</ul>
+				<ul class = "externallinks">
+					<li><a href = "https://www.linkedin.com/in/vktalgador/"
+						target="_blank"><img src = "images/linkedinlogo.png" width="50" height="50"></a></li>
 					<li><a href= "https://www.instagram.com/krspykim07/"
-						target="_blank"> Instagram </a></li>
-					</ul>
+						target="_blank"><img src = "images/instagramlogo.png" width="50" height="50"></a></li>
+				</ul>
 				</aside>
 			</div>	
 			<article class = "main">
@@ -178,7 +193,9 @@
 						<h3>IT STRATEGY SERVICES, STUDENT ASSISTANT</h3>
 						<h3>California Department of HealthCare and Services</h3>
 						<p class = "content">
-							
+							Developed essential reports using JIRA software to facilitate efficient project management
+							and provide in-depth qualitative analysis of workload in each department. My main role is to research and implement
+							effective training modules for different softwares used by the department such as Microsoft365, Jira, Miro, and Confluence.
 						</p>
 					
 					</li>

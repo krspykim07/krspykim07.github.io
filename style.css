@@ -1,0 +1,142 @@
+
+html{
+     scroll-behavior: smooth;
+	overflow: scroll;
+}
+
+body {
+	background-color: rgba(9, 14, 47, 0.944);
+	color: white;
+	font-family: sans-serif;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.wrapper {
+	display: flex;  
+	flex-flow: row wrap;
+	align-items: flex-start;
+
+}
+
+/* We tell all items to be 100% width, via flex-basis */
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+.header {
+	font-size: 40pt;
+	font-weight: bold;
+	margin-top: 70pt;
+	margin-left: 70pt;
+	top: 20pt;
+	width: 100%;
+	position:sticky;
+}
+
+.main {
+	margin-right: 70px;
+}
+
+.aside {
+	display: flex;
+	flex-flow: column wrap;
+	margin-top: 20px;
+	margin-left: 90px;
+
+}
+
+.profile {
+}
+
+.navigation {
+	list-style: none;
+	margin: 0;
+	color: white;
+	padding-left: 0;
+}
+
+.navigation a {
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: white;
+}
+
+.navigation a:hover {
+	background-color: rgba(46, 53, 110, 0.838);
+ 	margin-inline-start: 20px;
+  	transition: all 200ms linear;
+}
+
+.externallinks {
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	margin: 0;
+	padding-top: 10px;
+	padding-left: 0;
+}
+
+.externallinks a {
+	display: block;
+	padding: 10px;
+}
+
+div.page {
+	min-height:100px;
+	padding-top: 100px;
+}
+
+.experiencelist {
+	margin: 0;
+	padding-left: 0;
+}
+
+.experiencelist li {
+	list-style: none;
+	padding: 1em;
+	display: block;
+	border-radius: 10px;
+}
+
+.experiencelist li:hover {
+	background-color: rgba(46, 53, 110, 0.838);
+  	transition: all 200ms linear;
+}
+
+.content {
+	text-align: justify;
+	color: rgba(207, 205, 249, 0.809);
+}
+
+.footer {
+	background-color: black;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	min-height: 60px;
+	margin-top: auto;
+}
+
+@media all and (min-width: 600px) {
+/* We tell both sidebars to share a row */
+
+.aside { 
+	position: sticky;
+	top: 70px;
+	flex: 1 auto;
+  }
+}
+
+@media all and (min-width: 800px) {
+/* We invert order of first sidebar and main
+ * And tell the main element to take twice as much width as the other two sidebars 
+ */
+  .main	{flex: 3 0px;}
+  .aside	{order: 2;}
+  .main	{order: 3;}
+}

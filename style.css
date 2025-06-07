@@ -108,6 +108,12 @@ div.page {
   	transition: all 200ms linear;
 }
 
+.work_experience_list li {
+ 	background-size: 10px 10px; /* Adjust size of the dot image */
+  	padding-left: 20px; /* Space for the image */
+  	margin-bottom: 5px;
+}
+
 .content {
 	text-align: justify;
 	color: rgba(207, 205, 249, 0.809);
